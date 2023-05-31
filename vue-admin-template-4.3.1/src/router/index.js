@@ -51,29 +51,57 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/sys',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/sys/user',
     name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    meta: { title: '系统管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'user',
+        name: 'user',
+        component: () => import('@/views/sys/user'),
+        meta: { title: '用户管理', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'role',
+        name: 'role',
+        component: () => import('@/views/sys/role'),
+        meta: { title: '角色管理', icon: 'tree' }
       }
+    ]
+  },
+
+  {
+    path: '/test',
+    component: Layout,
+    redirect: '/test/test1',
+    name: 'Example',
+    meta: { title: '测试模块', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'test1',
+        name: 'test1',
+        component: () => import('@/views/test/test1'),
+        meta: { title: '功能模块一', icon: 'table' }
+      },
+      {
+        path: 'test2',
+        name: 'test2',
+        component: () => import('@/views/test/test2'),
+        meta: { title: '功能模块二', icon: 'table' }
+      },
+      {
+        path: 'test3',
+        name: 'test3',
+        component: () => import('@/views/test/test3'),
+        meta: { title: '功能模块三', icon: 'table' }
+      },
     ]
   },
 
